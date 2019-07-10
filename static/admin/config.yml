@@ -26,6 +26,7 @@ collections:
         searchFields: ["name"]
         valueField: "name"
         displayFields: ["name"]
+      - { label: "Type", name: "type", widget: "hidden", default: "blog"}
 
   - name: "authors"
     label: "Authors"
@@ -37,6 +38,7 @@ collections:
       preview: false
     fields:
       - { label: "Name", name: "name", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "author"}
 
   - name: "jobs"
     label: "Jobs"
@@ -51,3 +53,4 @@ collections:
       - { label: "A partir de", name: "when", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "URL Externe", name: "url", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "jobs"}
