@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Blog`,
+    title: `@DevLoris`,
     author: `Loris Pinna`,
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://pinna.dev/`,
