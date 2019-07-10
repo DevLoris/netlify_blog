@@ -14,25 +14,13 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Website" />
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          const title = node.frontmatter.name
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-                <img src={ node.frontmatter.thumbnail } alt={"dd"}/>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
+              <h2>{title}</h2>
+              <h3>{ node.frontmatter.when }</h3>
+              <p>{ node.frontmatter.description }</p>
+              <a target="_blank" href={ node.frontmatter.url } class="btn">Voir l'annonce</a>
             </div>
           )
         })}
@@ -50,7 +38,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 1 sort: {fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: { fields: {type: { eq: "job" }}}) {
       edges {
         node {
           excerpt
@@ -58,10 +46,10 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD/MM/YY")
-            title
-            thumbnail
-            description
+            name,
+            description,
+            url,
+            when
           }
         }
       }
