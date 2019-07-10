@@ -37,4 +37,17 @@ collections:
       preview: false
     fields:
       - { label: "Name", name: "name", widget: "string" }
+
+  - name: "jobs"
+    label: "Jobs"
+    folder: "content/jobs"
+    create: true
+    slug: "jobs/{{slug}}/"
+    identifier_field: "url"
+    editor:
+      preview: false
+    fields:
+      - { label: "Job", name: "name", widget: "string" }
+      - { label: "A partir de", name: "when", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
+      - { label: "URL Externe", name: "url", widget: "string" }
