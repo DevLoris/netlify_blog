@@ -50,7 +50,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 20 sort: {fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: { fields: {type: { eq: "blog" }}} limit: 20 sort: {fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
