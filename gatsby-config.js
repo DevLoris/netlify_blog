@@ -3,7 +3,7 @@ module.exports = {
     title: `@DevLoris`,
     author: `Loris Pinna`,
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://pinna.dev/`,
+    siteUrl: `https://bloog.netlify.com`,
     social: {
       twitter: `@epicloris`,
     },
@@ -70,7 +70,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#0059e2`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `content/assets/gatsby-icon.png`,
       },
     },
