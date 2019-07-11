@@ -1,4 +1,3 @@
-import 'firebase/database'
 import config from '../utils/firebase.keys'
 const conf = config;
 

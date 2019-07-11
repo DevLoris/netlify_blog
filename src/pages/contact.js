@@ -1,5 +1,4 @@
-import React from "react"
-import firebaseConfig from "../utils/firebase.keys";
+import React from "react" 
 import {getFirebase} from "../components/firebase";
 
 export default class ContactPage extends React.Component {
