@@ -47,6 +47,13 @@ class Layout extends React.Component {
                         Carrières
                     </Link>
                 </li>
+                <li>
+                    <Link
+                        to={`/contact/`}
+                    >
+                        Contact
+                    </Link>
+                </li>
                 </ul>
           </div>
       )
