@@ -13,12 +13,13 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Website" />
+        <h2>Carrières</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.name
           return (
             <div key={node.fields.slug}>
-              <h2>{title}</h2>
-              <h3>{ node.frontmatter.when }</h3>
+              <h3>{title}</h3>
+              <strong>{ node.frontmatter.when }</strong>
               <p>{ node.frontmatter.description }</p>
               <a target="_blank" href={ node.frontmatter.url } class="btn">Voir l'annonce</a>
             </div>

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `@DevLoris`,
     author: `Loris Pinna`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Un blog pour tester diverses fonctionnalités`,
     siteUrl: `https://bloog.netlify.com`,
     social: {
       twitter: `@epicloris`,

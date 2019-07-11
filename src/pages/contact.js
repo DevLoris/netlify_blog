@@ -34,6 +34,7 @@ export default class ContactPage extends React.Component {
         return (
             <Layout location={this.props.location} title="Contact">
                 <SEO title="Contact" />
+                     <h2>Contactez-nous</h2>
                     <form onSubmit={this.handleSubmit}>
                         <label>
                             First name
