@@ -14,7 +14,7 @@ A blog using some features from Gatsby. Made for test purpose only.
 - npm 
 - Firebase 
 
-## Run 
+## Run
 ### Development mode
 `gatsby develop`
 
