@@ -68,6 +68,7 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
+          <script src={'/main.js'}></script>
       </div>
     )
   }
