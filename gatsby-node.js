@@ -1,6 +1,17 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const PAGE_CONFIGURATIONS = {
+  'blog': {
+    'enabled': true,
+    'template': 'blog-post.js'
+  },
+  'job': {
+    'enabled': false,
+    'template': 'job-post.js'
+  }
+}
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -37,23 +48,12 @@ exports.createPages = ({ graphql, actions }) => {
 
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-      if(post.node.frontmatter.type === 'blog') {
-        const blogPost = path.resolve(`./src/templates/blog-post.js`)
+
+      if(PAGE_CONFIGURATIONS[post.node.frontmatter.type] && PAGE_CONFIGURATIONS[post.node.frontmatter.type].enabled) {
+        const template = path.resolve(`./src/templates/${ PAGE_CONFIGURATIONS[post.node.frontmatter.type].template }` )
         createPage({
           path: post.node.fields.slug,
-          component: blogPost,
-          context: {
-            slug: post.node.fields.slug,
-            previous,
-            next,
-          },
-        })
-      }
-      else {
-        const blogPost = path.resolve(`./src/templates/job-post.js`);
-        createPage({
-          path: post.node.fields.slug,
-          component: blogPost,
+          component: template,
           context: {
             slug: post.node.fields.slug,
             previous,

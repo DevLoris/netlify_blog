@@ -1,5 +1,7 @@
-import React from "react" 
+import React from "react"
 import {getFirebase} from "../components/firebase";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 export default class ContactPage extends React.Component {
     state = {
@@ -30,27 +32,32 @@ export default class ContactPage extends React.Component {
     render() {
 
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    First name
-                    <input
-                        type="text"
-                        name="firstName"
-                        value={this.state.firstName}
-                        onChange={this.handleInputChange}
-                    />
-                </label>
-                <label>
-                    Last name
-                    <input
-                        type="text"
-                        name="lastName"
-                        value={this.state.lastName}
-                        onChange={this.handleInputChange}
-                    />
-                </label>
-                <button type="submit">Submit</button>
-            </form>
+            <Layout location={this.props.location} title="Contact">
+                <SEO title="Contact" />
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            First name
+                            <input
+                                type="text"
+                                name="firstName"
+                                value={this.state.firstName}
+                                onChange={this.handleInputChange}
+                            />
+                        </label>
+                        <br />
+                        <label>
+                            Last name
+                            <input
+                                type="text"
+                                name="lastName"
+                                value={this.state.lastName}
+                                onChange={this.handleInputChange}
+                            />
+                        </label>
+                            <br />
+                        <button type="submit">Submit</button>
+                    </form>
+            </Layout>
         )
     }
 }
