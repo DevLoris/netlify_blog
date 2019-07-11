@@ -65,11 +65,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Blog de DevLoris`,
+        short_name: `Loris Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#0059e2`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
@@ -82,5 +82,12 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-  ],
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        exclude: ["/admin/*"],
+      },
+    },
+  ]
 }
