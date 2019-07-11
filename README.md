@@ -7,3 +7,17 @@ A blog using some features from Gatsby. Made for test purpose only.
 - SEO proof 
 - Sitemaps 
 - Service Worker (Fullscreen on mobile)
+
+## Dependencies
+- Netlify CMS 
+- Gatsby
+- npm 
+- Firebase 
+
+## Run 
+### Development mode
+`gatsby develop`
+
+### Build mode
+`gatsby build && gatsby serve`
+
